@@ -42,6 +42,24 @@ class TestParser(unittest.TestCase):
         got = interp.eval(pg)[0]
         self.assertEqual(expected, got)
 
+    def test_less_equal_to_operator(self):
+        lexer = Lexer("1>=3")
+        parser = Parser(lexer)
+        expected = False
+        pg = parser.parse()
+        interp = Interpreter()
+        got = interp.eval(pg)[0]
+        self.assertEqual(expected, got)
+
+    def test_equality_operator(self):
+        lexer = Lexer("44455 == 44455")
+        parser = Parser(lexer)
+        expected = True
+        pg = parser.parse()
+        interp = Interpreter()
+        got = interp.eval(pg)[0]
+        self.assertEqual(expected, got)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -14,11 +14,22 @@ class TokenType(Enum):
     SLASH = 7
     MOD = 8
 
-    LPAREN = 9
-    RPAREN = 10
+    LT = 9
+    GT = 10
+    LE = 11
+    GE = 12
+    EQ = 13
+    NE = 14
 
-    ILLEGAL = 11
-    EOF = 12
+    NOT = 15
+
+    ASSIGN = 16
+
+    LPAREN = 17
+    RPAREN = 18
+
+    ILLEGAL = 19
+    EOF = 20
 
 
 @dataclass

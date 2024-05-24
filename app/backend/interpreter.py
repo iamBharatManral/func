@@ -39,3 +39,27 @@ class Interpreter:
                 return self.eval_expression(stmt.left) % self.eval_expression(
                     stmt.right
                 )
+            if stmt.operator == "<":
+                return self.eval_expression(stmt.left) < self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == "<=":
+                return self.eval_expression(stmt.left) <= self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == ">":
+                return self.eval_expression(stmt.left) > self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == ">=":
+                return self.eval_expression(stmt.left) >= self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == "!=":
+                return self.eval_expression(stmt.left) != self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == "==":
+                return self.eval_expression(stmt.left) == self.eval_expression(
+                    stmt.right
+                )

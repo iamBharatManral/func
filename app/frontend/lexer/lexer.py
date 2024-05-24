@@ -26,6 +26,30 @@ class Lexer:
             return Token(self._next_position, TokenType.STAR, "*", None)
         elif self._char == "/":
             return Token(self._next_position, TokenType.SLASH, "/", None)
+        elif self._char == "<":
+            if self._peek_char() == "=":
+                start = self._next_position
+                self._read_char()
+                return Token(start, TokenType.LE, "<=", None)
+            return Token(self._next_position, TokenType.LT, "<", None)
+        elif self._char == ">":
+            if self._peek_char() == "=":
+                start = self._next_position
+                self._read_char()
+                return Token(start, TokenType.GE, ">=", None)
+            return Token(self._next_position, TokenType.GT, ">", None)
+        elif self._char == "!":
+            if self._peek_char() == "=":
+                start = self._next_position
+                self._read_char()
+                return Token(start, TokenType.NE, "!=", None)
+            return Token(self._next_position, TokenType.NOT, "!", None)
+        elif self._char == "=":
+            if self._peek_char() == "=":
+                start = self._next_position
+                self._read_char()
+                return Token(start, TokenType.EQ, "==", None)
+            return Token(self._next_position, TokenType.ASSIGN, "=", None)
         elif self._char == "(":
             return Token(self._next_position, TokenType.LPAREN, "(", None)
         elif self._char == ")":

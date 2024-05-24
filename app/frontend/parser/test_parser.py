@@ -64,7 +64,22 @@ class TestParser(unittest.TestCase):
     def test_multi_parenthesis_binary_expression(self):
         lexer = Lexer("((1+ 2 * (3*4)) + 4)")
         parser = Parser(lexer)
-        expected = BinaryExpression(left=BinaryExpression(left=IntLiteral(value=1), right=BinaryExpression(left=IntLiteral(value=2), right=BinaryExpression(left=IntLiteral(value=3), right=IntLiteral(value=4), operator='*'), operator='*'), operator='+'), right=IntLiteral(value=4), operator='+')
+        expected = BinaryExpression(left=BinaryExpression(left=IntLiteral(value=1),
+                                                          right=BinaryExpression(left=IntLiteral(value=2),
+                                                                                 right=BinaryExpression(
+                                                                                     left=IntLiteral(value=3),
+                                                                                     right=IntLiteral(value=4),
+                                                                                     operator='*'), operator='*'),
+                                                          operator='+'), right=IntLiteral(value=4), operator='+')
+        pg = parser.parse()
+        got = pg.statements[0]
+        self.assertEqual(expected, got)
+
+    def test_parsing_less_than_binary_expression(self):
+        lexer = Lexer("1 < 4")
+        parser = Parser(lexer)
+        expected = BinaryExpression(left=IntLiteral(value=1), right=IntLiteral(value=4), operator='<')
+
         pg = parser.parse()
         got = pg.statements[0]
         self.assertEqual(expected, got)

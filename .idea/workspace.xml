@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="feat: interpreter - create interpreter for expressions">
+    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="feat: filerunner - add single statement support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/filerunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/filerunner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/interpreter.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/interpreter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/backend/test_interpreter.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/test_interpreter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/frontend/lexer/lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/lexer/lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/frontend/lexer/tokn.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/lexer/tokn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/frontend/parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/parser/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/frontend/parser/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/parser/test_parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +67,7 @@
       <recent name="$PROJECT_DIR$/src/frontend" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.func">
     <configuration name="func" type="PythonConfigurationType" factoryName="Python">
       <module name="func" />
       <option name="ENV_FILES" value="" />
@@ -267,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716567096534</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: filerunner - add single statement support">
+      <option name="closed" value="true" />
+      <created>1716567348390</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716567348390</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -279,7 +292,8 @@
     <MESSAGE value="feat: parser: parse literal int, float, string values" />
     <MESSAGE value="feat: parser - support for unary,binary expressions" />
     <MESSAGE value="feat: interpreter - create interpreter for expressions" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: interpreter - create interpreter for expressions" />
+    <MESSAGE value="feat: filerunner - add single statement support" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: filerunner - add single statement support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

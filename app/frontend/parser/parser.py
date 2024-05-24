@@ -68,12 +68,29 @@ class Parser:
             return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "/")
         elif token_type == TokenType.MOD:
             return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "%")
+        elif token_type == TokenType.EQ:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "==")
+        elif token_type == TokenType.NE:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "!=")
+        elif token_type == TokenType.LT:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "<")
+        elif token_type == TokenType.LE:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "<=")
+        elif token_type == TokenType.GT:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), ">")
+        elif token_type == TokenType.GE:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), ">=")
 
     def _get_precedence(self, token) -> int:
         token_type = token.token_type
-        if token_type == TokenType.PLUS or token_type == TokenType.MINUS:
+        plus_minus = [TokenType.PLUS, TokenType.MINUS]
+        star_slash = [TokenType.STAR, TokenType.SLASH, TokenType.MOD]
+        relation_operators = [TokenType.EQ, TokenType.LE, TokenType.LT, TokenType.GT, TokenType.GE, TokenType.NE]
+        if token_type in plus_minus:
             return 10
-        if token_type == TokenType.STAR or token_type == TokenType.SLASH or token_type == TokenType.MOD:
+        if token_type in star_slash:
             return 20
+        if token_type in relation_operators:
+            return 5
         return 0
 
