@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer">
+    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="feat: lexer - identify arithmetic operators and parenthesis">
+      <change afterPath="$PROJECT_DIR$/src/frontend/parser/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/parser/ast.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/parser/parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/parser/test_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repl.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/repl.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716535463631</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: lexer - identify arithmetic operators and parenthesis">
+      <option name="closed" value="true" />
+      <created>1716536351058</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716536351058</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -243,7 +253,8 @@
     <MESSAGE value="feat: create repl and file runner packages" />
     <MESSAGE value="chore: add README" />
     <MESSAGE value="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer" />
+    <MESSAGE value="feat: lexer - identify arithmetic operators and parenthesis" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: lexer - identify arithmetic operators and parenthesis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

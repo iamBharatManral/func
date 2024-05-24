@@ -1,5 +1,5 @@
 from frontend.lexer.lexer import Lexer
-from frontend.lexer.tokn import TokenType
+from frontend.parser.parser import Parser
 
 
 def start_repl():
@@ -12,11 +12,12 @@ def start_repl():
             continue
         else:
             lexer = Lexer(source)
-            token = lexer.next_token()
-            while token.token_type != TokenType.EOF:
-                print(token)
-                token = lexer.next_token()
-            print(token)
+            parser = Parser(lexer)
+            pg = parser.parse()
+            if len(parser.errors) > 0:
+                print(parser.errors)
+            else:
+                print(pg.statements)
 
 
 def print_banner():
