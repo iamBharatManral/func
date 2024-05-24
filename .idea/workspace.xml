@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="chore: add README">
-      <change afterPath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repl.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filerunner/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filerunner/filerunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/filerunner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repl/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repl/repl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +47,7 @@
     "Python tests.Python tests for lexer.test_lexer.TestLexer.test_float_literal.executor": "Run",
     "Python tests.Python tests for lexer.test_lexer.TestLexer.test_illegal_token.executor": "Run",
     "Python tests.Python tests for lexer.test_lexer.TestLexer.test_int_literal.executor": "Run",
+    "Python tests.Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens.executor": "Run",
     "Python tests.Python tests for lexer.test_lexer.TestLexer.test_string_literal.executor": "Run",
     "Python.func.executor": "Run",
     "Python.main.executor": "Run",
@@ -68,7 +62,7 @@
       <recent name="$PROJECT_DIR$/src/frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for lexer.test_lexer.TestLexer.test_illegal_token">
+  <component name="RunManager" selected="Python tests.Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens">
     <configuration name="func" type="PythonConfigurationType" factoryName="Python">
       <module name="func" />
       <option name="ENV_FILES" value="" />
@@ -84,28 +78,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="func" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,6 +131,21 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="func" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/frontend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for lexer.test_lexer.TestLexer.test_string_literal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="func" />
       <option name="ENV_FILES" value="" />
@@ -176,19 +163,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.func" />
-      <item itemvalue="Python.main" />
       <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_float_literal" />
       <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_illegal_token" />
       <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_int_literal" />
+      <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" />
       <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_string_literal" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" />
         <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_illegal_token" />
         <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_string_literal" />
         <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_float_literal" />
         <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_int_literal" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -240,21 +227,30 @@
       <option name="project" value="LOCAL" />
       <updated>1716524732107</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer">
+      <option name="closed" value="true" />
+      <created>1716535463631</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716535463631</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init: initialize the project" />
     <MESSAGE value="feat: create repl and file runner packages" />
     <MESSAGE value="chore: add README" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: add README" />
+    <MESSAGE value="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/frontend/lexer/test_lexer.py</url>
-          <line>49</line>
+          <line>69</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

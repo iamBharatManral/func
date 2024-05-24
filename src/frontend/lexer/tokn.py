@@ -7,8 +7,18 @@ class TokenType(Enum):
     INTEGER = 1
     FLOAT = 2
     STRING = 3
-    ILLEGAL = 4
-    EOF = 5
+
+    PLUS = 4
+    MINUS = 5
+    STAR = 6
+    SLASH = 7
+    MOD = 8
+
+    LBRACE = 9
+    RBRACE = 10
+
+    ILLEGAL = 11
+    EOF = 12
 
 
 @dataclass

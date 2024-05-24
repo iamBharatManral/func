@@ -17,6 +17,20 @@ class Lexer:
             return self._number_token()
         elif self._char == '"':
             return self._string_token()
+        elif self._char == "+":
+            return Token(self._next_position, TokenType.PLUS, "+", None)
+        elif self._char == "-":
+            return Token(self._next_position, TokenType.MINUS, "-", None)
+        elif self._char == "*":
+            return Token(self._next_position, TokenType.STAR, "*", None)
+        elif self._char == "/":
+            return Token(self._next_position, TokenType.SLASH, "/", None)
+        elif self._char == "(":
+            return Token(self._next_position, TokenType.LBRACE, "(", None)
+        elif self._char == ")":
+            return Token(self._next_position, TokenType.RBRACE, ")", None)
+        elif self._char == "%":
+            return Token(self._next_position, TokenType.MOD, "%", None)
         else:
             return Token(self._next_position, TokenType.ILLEGAL, None, None)
 

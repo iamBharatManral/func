@@ -19,6 +19,26 @@ class TestLexer(unittest.TestCase):
         got.append(token)
         self.assertEqual(expected, got)
 
+    def test_operator_and_parenthesis_tokens(self):
+        lexer = Lexer("+-*/()%")
+        expected = [
+            Token(1, TokenType.PLUS, "+", None),
+            Token(2, TokenType.MINUS, "-", None),
+            Token(3, TokenType.STAR, "*", None),
+            Token(4, TokenType.SLASH, "/", None),
+            Token(5, TokenType.LBRACE, "(", None),
+            Token(6, TokenType.RBRACE, ")", None),
+            Token(7, TokenType.MOD, "%", None),
+            Token(8, TokenType.EOF, None, None),
+        ]
+        got = []
+        token = lexer.next_token()
+        while token.token_type != TokenType.EOF:
+            got.append(token)
+            token = lexer.next_token()
+        got.append(token)
+        self.assertEqual(expected, got)
+
     def test_int_literal(self):
         lexer = Lexer("123")
         expected = [
