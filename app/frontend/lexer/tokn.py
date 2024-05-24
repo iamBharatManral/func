@@ -22,14 +22,19 @@ class TokenType(Enum):
     NE = 14
 
     NOT = 15
+    AND = 16
+    OR = 17
 
-    ASSIGN = 16
+    BAND = 18
+    BOR = 19
 
-    LPAREN = 17
-    RPAREN = 18
+    ASSIGN = 20
 
-    ILLEGAL = 19
-    EOF = 20
+    LPAREN = 21
+    RPAREN = 22
+
+    ILLEGAL = 23
+    EOF = 24
 
 
 @dataclass

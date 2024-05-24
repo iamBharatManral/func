@@ -6,7 +6,7 @@ from app.frontend.parser.parser import Parser
 
 
 class TestParser(unittest.TestCase):
-    def test_parsing_integer(self):
+    def test_eval_integer(self):
         lexer = Lexer("123")
         parser = Parser(lexer)
         expected = 123
@@ -42,7 +42,7 @@ class TestParser(unittest.TestCase):
         got = interp.eval(pg)[0]
         self.assertEqual(expected, got)
 
-    def test_less_equal_to_operator(self):
+    def test_eval_less_than_equal_to_operator(self):
         lexer = Lexer("1>=3")
         parser = Parser(lexer)
         expected = False
@@ -51,8 +51,17 @@ class TestParser(unittest.TestCase):
         got = interp.eval(pg)[0]
         self.assertEqual(expected, got)
 
-    def test_equality_operator(self):
+    def test_eval_equality(self):
         lexer = Lexer("44455 == 44455")
+        parser = Parser(lexer)
+        expected = True
+        pg = parser.parse()
+        interp = Interpreter()
+        got = interp.eval(pg)[0]
+        self.assertEqual(expected, got)
+
+    def test_logical_operator(self):
+        lexer = Lexer("1 == 1 || 25 < 45")
         parser = Parser(lexer)
         expected = True
         pg = parser.parse()

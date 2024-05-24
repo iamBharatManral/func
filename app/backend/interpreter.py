@@ -63,3 +63,19 @@ class Interpreter:
                 return self.eval_expression(stmt.left) == self.eval_expression(
                     stmt.right
                 )
+            if stmt.operator == "&&":
+                return self.eval_expression(stmt.left) and self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == "||":
+                return self.eval_expression(stmt.left) or self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == "&":
+                return self.eval_expression(stmt.left) & self.eval_expression(
+                    stmt.right
+                )
+            if stmt.operator == "|":
+                return self.eval_expression(stmt.left) | self.eval_expression(
+                    stmt.right
+                )

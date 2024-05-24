@@ -6,7 +6,7 @@ from .lexer import Lexer, TokenType, Token
 class TestLexer(unittest.TestCase):
 
     def test_lexer_illegal_token(self):
-        lexer = Lexer("&")
+        lexer = Lexer("$")
         expected = [
             Token(1, TokenType.ILLEGAL, None, None),
             Token(2, TokenType.EOF, None, None),
@@ -71,6 +71,20 @@ class TestLexer(unittest.TestCase):
         lexer = Lexer("<=")
         expected = [
             Token(1, TokenType.LE, "<=", None),
+            Token(3, TokenType.EOF, None, None),
+        ]
+        got = []
+        token = lexer.next_token()
+        while token.token_type != TokenType.EOF:
+            got.append(token)
+            token = lexer.next_token()
+        got.append(token)
+        self.assertEqual(expected, got)
+
+    def test_lexer_logical_operator(self):
+        lexer = Lexer("&&")
+        expected = [
+            Token(1, TokenType.AND, "&&", None),
             Token(3, TokenType.EOF, None, None),
         ]
         got = []

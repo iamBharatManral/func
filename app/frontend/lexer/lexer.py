@@ -50,6 +50,18 @@ class Lexer:
                 self._read_char()
                 return Token(start, TokenType.EQ, "==", None)
             return Token(self._next_position, TokenType.ASSIGN, "=", None)
+        elif self._char == "&":
+            if self._peek_char() == "&":
+                start = self._next_position
+                self._read_char()
+                return Token(start, TokenType.AND, "&&", None)
+            return Token(self._next_position, TokenType.BAND, "&", None)
+        elif self._char == "|":
+            if self._peek_char() == "|":
+                start = self._next_position
+                self._read_char()
+                return Token(start, TokenType.BOR, "||", None)
+            return Token(self._next_position, TokenType.BOR, "|", None)
         elif self._char == "(":
             return Token(self._next_position, TokenType.LPAREN, "(", None)
         elif self._char == ")":

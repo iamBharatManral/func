@@ -84,6 +84,16 @@ class TestParser(unittest.TestCase):
         got = pg.statements[0]
         self.assertEqual(expected, got)
 
+    def test_parsing_logical_and(self):
+        lexer = Lexer("(1 >= 2) && 2 != 2")
+        parser = Parser(lexer)
+        expected = BinaryExpression(
+            left=BinaryExpression(left=IntLiteral(value=1), right=IntLiteral(value=2), operator='>='),
+            right=BinaryExpression(left=IntLiteral(value=2), right=IntLiteral(value=2), operator='!='), operator='&&')
+        pg = parser.parse()
+        got = pg.statements[0]
+        self.assertEqual(expected, got)
+
 
 if __name__ == "__main__":
     unittest.main()

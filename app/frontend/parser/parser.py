@@ -80,6 +80,14 @@ class Parser:
             return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), ">")
         elif token_type == TokenType.GE:
             return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), ">=")
+        elif token_type == TokenType.AND:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "&&")
+        elif token_type == TokenType.OR:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "||")
+        elif token_type == TokenType.BAND:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "&")
+        elif token_type == TokenType.BOR:
+            return BinaryExpression(left, self._parse_expression(self._get_precedence(token)), "|")
 
     def _get_precedence(self, token) -> int:
         token_type = token.token_type
@@ -92,5 +100,12 @@ class Parser:
             return 20
         if token_type in relation_operators:
             return 5
+        if token_type == TokenType.BAND:
+            return 4
+        if token_type == TokenType.BOR:
+            return 3
+        if token_type == TokenType.AND:
+            return 2
+        if token_type == TokenType.OR:
+            return 1
         return 0
-
