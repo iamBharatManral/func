@@ -4,16 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="feat: parser: parse literal int, float, string values">
-      <change afterPath="$PROJECT_DIR$/src/backend/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/interpreter.py" afterDir="false" />
+    <list default="true" id="1d637338-acaf-442d-8039-d1be4730cef2" name="Changes" comment="feat: parser - support for unary,binary expressions">
+      <change afterPath="$PROJECT_DIR$/app/backend/interpreter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/frontend/lexer/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/frontend/parser/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/parser/ast.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/parser/ast.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/parser/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/parser/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/parser/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filerunner.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/filerunner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/lexer/lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/test_lexer.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/lexer/test_lexer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/lexer/tokn.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/lexer/tokn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/parser/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/parser/ast.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/parser/ast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/parser/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/parser/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/parser/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/frontend/parser/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repl.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repl.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +70,13 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/func" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens">
+  <component name="RunManager">
     <configuration name="func" type="PythonConfigurationType" factoryName="Python">
       <module name="func" />
       <option name="ENV_FILES" value="" />
@@ -91,96 +100,96 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for lexer.test_lexer.TestLexer.test_float_literal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for func.frontend.lexer.test_lexer.TestLexer.test_float_literal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="func" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/frontend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/frontend" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;lexer.test_lexer.TestLexer.test_float_literal&quot;" />
+      <option name="_new_target" value="&quot;func.frontend.lexer.test_lexer.TestLexer.test_float_literal&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for lexer.test_lexer.TestLexer.test_illegal_token" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for func.frontend.lexer.test_lexer.TestLexer.test_illegal_token" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="func" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/frontend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/frontend" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;lexer.test_lexer.TestLexer.test_illegal_token&quot;" />
+      <option name="_new_target" value="&quot;func.frontend.lexer.test_lexer.TestLexer.test_illegal_token&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for lexer.test_lexer.TestLexer.test_int_literal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for func.frontend.lexer.test_lexer.TestLexer.test_int_literal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="func" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/frontend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/frontend" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;lexer.test_lexer.TestLexer.test_int_literal&quot;" />
+      <option name="_new_target" value="&quot;func.frontend.lexer.test_lexer.TestLexer.test_int_literal&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for func.frontend.lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="func" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/frontend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/frontend" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens&quot;" />
+      <option name="_new_target" value="&quot;func.frontend.lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for lexer.test_lexer.TestLexer.test_string_literal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for func.frontend.lexer.test_lexer.TestLexer.test_string_literal" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="func" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/frontend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/func/frontend" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;lexer.test_lexer.TestLexer.test_string_literal&quot;" />
+      <option name="_new_target" value="&quot;func.frontend.lexer.test_lexer.TestLexer.test_string_literal&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.func" />
-      <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_float_literal" />
-      <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_illegal_token" />
-      <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_int_literal" />
-      <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" />
-      <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_string_literal" />
+      <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_float_literal" />
+      <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_illegal_token" />
+      <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_int_literal" />
+      <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" />
+      <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_string_literal" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" />
-        <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_illegal_token" />
-        <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_string_literal" />
-        <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_float_literal" />
-        <item itemvalue="Python tests.Python tests for lexer.test_lexer.TestLexer.test_int_literal" />
+        <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_operator_and_parenthesis_tokens" />
+        <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_illegal_token" />
+        <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_string_literal" />
+        <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_float_literal" />
+        <item itemvalue="Python tests.Python tests for func.frontend.lexer.test_lexer.TestLexer.test_int_literal" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716545191008</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: parser - support for unary,binary expressions">
+      <option name="closed" value="true" />
+      <created>1716563266663</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716563266663</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -266,13 +283,14 @@
     <MESSAGE value="feat: lexer - identify integer, float, and string literals&#10;* tests: unit tests for lexer" />
     <MESSAGE value="feat: lexer - identify arithmetic operators and parenthesis" />
     <MESSAGE value="feat: parser: parse literal int, float, string values" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: parser: parse literal int, float, string values" />
+    <MESSAGE value="feat: parser - support for unary,binary expressions" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: parser - support for unary,binary expressions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/frontend/lexer/test_lexer.py</url>
+          <url>file://$PROJECT_DIR$/app/frontend/lexer/test_lexer.py</url>
           <line>69</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>

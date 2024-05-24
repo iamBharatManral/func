@@ -1,5 +1,6 @@
-from frontend.lexer.lexer import Lexer
-from frontend.parser.parser import Parser
+from app.backend.interpreter import Interpreter
+from app.frontend.lexer.lexer import Lexer
+from app.frontend.parser.parser import Parser
 
 
 def start_repl():
@@ -17,7 +18,10 @@ def start_repl():
             if len(parser.errors) > 0:
                 print(parser.errors)
             else:
-                print(pg.statements)
+                interpreter = Interpreter()
+                output = interpreter.eval(pg)
+                for out in output:
+                    print(out)
 
 
 def print_banner():
