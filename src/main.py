@@ -1,5 +1,15 @@
+import sys
+
+from filerunner import filerunner
+from repl import repl
+
+
 def main():
-    print("func")
+    args = sys.argv
+    if len(args) == 1:
+        repl.start_repl()
+    elif len(args) == 2:
+        filerunner.execute_file(args[1])
 
 
 if __name__ == "__main__":
