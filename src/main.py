@@ -1,7 +1,7 @@
 import sys
 
-from filerunner import filerunner
-from repl import repl
+import filerunner
+import repl
 
 
 def main():
