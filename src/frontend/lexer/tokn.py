@@ -14,8 +14,8 @@ class TokenType(Enum):
     SLASH = 7
     MOD = 8
 
-    LBRACE = 9
-    RBRACE = 10
+    LPAREN = 9
+    RPAREN = 10
 
     ILLEGAL = 11
     EOF = 12

@@ -32,3 +32,10 @@ class FloatLiteral(Expression):
 @dataclass
 class StringLiteral(Expression):
     value: str
+
+
+@dataclass
+class BinaryExpression(Expression):
+    left: Statement
+    right: Statement
+    operator: str

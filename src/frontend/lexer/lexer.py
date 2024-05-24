@@ -5,12 +5,13 @@ from .tokn import Token, TokenType
 
 class Lexer:
     def __init__(self, source: str):
-        self._source = source
-        self._char = None
-        self._next_position = 0
+        self._source: str = source
+        self._char: Optional[str] = None
+        self._next_position: int = 0
 
     def next_token(self) -> Token:
         self._read_char()
+        self._ignore_whitespace()
         if self._char is None:
             return Token(self._next_position, TokenType.EOF, None, None)
         elif self._char.isdigit():
@@ -26,9 +27,9 @@ class Lexer:
         elif self._char == "/":
             return Token(self._next_position, TokenType.SLASH, "/", None)
         elif self._char == "(":
-            return Token(self._next_position, TokenType.LBRACE, "(", None)
+            return Token(self._next_position, TokenType.LPAREN, "(", None)
         elif self._char == ")":
-            return Token(self._next_position, TokenType.RBRACE, ")", None)
+            return Token(self._next_position, TokenType.RPAREN, ")", None)
         elif self._char == "%":
             return Token(self._next_position, TokenType.MOD, "%", None)
         else:
@@ -76,3 +77,9 @@ class Lexer:
         self._read_char()
         lexeme += self._char
         return Token(start, TokenType.STRING, lexeme, lexeme[1 : len(lexeme) - 1])
+
+    def _ignore_whitespace(self):
+        char = self._char
+        while char and char.isspace():
+            self._read_char()
+            char = self._char

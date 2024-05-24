@@ -26,8 +26,8 @@ class TestLexer(unittest.TestCase):
             Token(2, TokenType.MINUS, "-", None),
             Token(3, TokenType.STAR, "*", None),
             Token(4, TokenType.SLASH, "/", None),
-            Token(5, TokenType.LBRACE, "(", None),
-            Token(6, TokenType.RBRACE, ")", None),
+            Token(5, TokenType.LPAREN, "(", None),
+            Token(6, TokenType.RPAREN, ")", None),
             Token(7, TokenType.MOD, "%", None),
             Token(8, TokenType.EOF, None, None),
         ]
