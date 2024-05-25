@@ -95,11 +95,25 @@ class TestLexer(unittest.TestCase):
         got.append(token)
         self.assertEqual(expected, got)
 
-    def test_string_literal(self):
+    def test_lexer_string_literal(self):
         lexer = Lexer('"hello"')
         expected = [
             Token(1, TokenType.STRING, '"hello"', "hello"),
             Token(8, TokenType.EOF, None, None),
+        ]
+        got = []
+        token = lexer.next_token()
+        while token.token_type != TokenType.EOF:
+            got.append(token)
+            token = lexer.next_token()
+        got.append(token)
+        self.assertEqual(expected, got)
+
+    def test_lexer_identifier(self):
+        lexer = Lexer("let")
+        expected = [
+            Token(1, TokenType.IDENTIFIER, "let", None),
+            Token(4, TokenType.EOF, None, None),
         ]
         got = []
         token = lexer.next_token()

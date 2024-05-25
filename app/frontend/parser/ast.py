@@ -39,3 +39,14 @@ class BinaryExpression(Expression):
     left: Statement
     right: Statement
     operator: str
+
+
+@dataclass
+class Identifier(Expression):
+    name: str
+
+
+@dataclass
+class NameBinding(Statement):
+    left: Identifier
+    right: Expression

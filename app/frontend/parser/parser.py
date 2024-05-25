@@ -1,18 +1,23 @@
 from typing import Optional
 
-from .ast import Program, Statement, StringLiteral, IntLiteral, FloatLiteral, Expression, BinaryExpression
+from .ast import Program, Statement, StringLiteral, IntLiteral, FloatLiteral, Expression, BinaryExpression, NameBinding, \
+    Identifier
 from ..lexer.lexer import Lexer
 from ..lexer.tokn import TokenType, Token
 
 
 class Parser:
-    def __init__(self, lexer: Lexer):
+    def __init__(self, lexer: Lexer, symbol_table):
         self._lexer = lexer
         self._current_token = self._lexer.next_token()
         self.errors = []
+        self._symbol_table = symbol_table
 
     def _advance_token(self):
         self._current_token = self._lexer.next_token()
+
+    def _peek_token(self):
+        return self._lexer.peek_token()
 
     def parse(self) -> Program:
         pg = Program([])
@@ -23,6 +28,8 @@ class Parser:
         return pg
 
     def _parse_statement(self) -> Statement:
+        if self._peek_token().token_type == TokenType.ASSIGN:
+            return self._parse_name_binding()
         return self._parse_expression(0)
 
     def _parse_expression(self, infix_precedence: int) -> Optional[Expression]:
@@ -55,6 +62,8 @@ class Parser:
             return expr
         elif token.token_type == TokenType.STRING:
             return StringLiteral(token.value)
+        elif token.token_type == TokenType.IDENTIFIER:
+            return Identifier(name=token.lexeme)
 
     def _infix(self, token: Token, left: Expression) -> Expression:
         token_type = token.token_type
@@ -109,3 +118,11 @@ class Parser:
         if token_type == TokenType.OR:
             return 1
         return 0
+
+    def _parse_name_binding(self):
+        left = self._current_token
+        self._advance_token()
+        self._advance_token()
+        self._symbol_table.insert(name=left.lexeme)
+        right = self._parse_expression(0)
+        return NameBinding(Identifier(name=left.lexeme), right)

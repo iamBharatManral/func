@@ -33,8 +33,10 @@ class TokenType(Enum):
     LPAREN = 21
     RPAREN = 22
 
-    ILLEGAL = 23
-    EOF = 24
+    IDENTIFIER = 23
+
+    ILLEGAL = 24
+    EOF = 25
 
 
 @dataclass

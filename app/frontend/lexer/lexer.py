@@ -16,6 +16,8 @@ class Lexer:
             return Token(self._next_position, TokenType.EOF, None, None)
         elif self._char.isdigit():
             return self._number_token()
+        elif self._char.isalpha():
+            return self._identifier_token()
         elif self._char == '"':
             return self._string_token()
         elif self._char == "+":
@@ -71,6 +73,17 @@ class Lexer:
         else:
             return Token(self._next_position, TokenType.ILLEGAL, None, None)
 
+    def peek_token(self, by: int = 1):
+        prev_position = self._next_position
+        prev_char = self._char
+        next_token = None
+        while by > 0:
+            next_token = self.next_token()
+            by -= 1
+        self._next_position = prev_position
+        self._char = prev_char
+        return next_token
+
     def _read_char(self):
         if self._end_of_source():
             self._next_position += 1
@@ -119,3 +132,13 @@ class Lexer:
         while char and char.isspace():
             self._read_char()
             char = self._char
+
+    def _identifier_token(self):
+        lexeme = self._char
+        start = self._next_position
+        peek_char = self._peek_char()
+        while peek_char and peek_char.isalnum():
+            self._read_char()
+            lexeme += self._char
+            peek_char = self._peek_char()
+        return Token(start, TokenType.IDENTIFIER, lexeme, None)

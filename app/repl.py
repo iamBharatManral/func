@@ -1,9 +1,11 @@
 from app.backend.interpreter import Interpreter
+from app.environment.environment import SymbolTable
 from app.frontend.lexer.lexer import Lexer
 from app.frontend.parser.parser import Parser
 
 
 def start_repl():
+    symtable = SymbolTable()
     print_banner()
     while True:
         source = input("λ: ")
@@ -13,15 +15,17 @@ def start_repl():
             continue
         else:
             lexer = Lexer(source)
-            parser = Parser(lexer)
+            parser = Parser(lexer, symtable)
             pg = parser.parse()
             if len(parser.errors) > 0:
-                print(parser.errors)
+                for err in parser.errors:
+                    print(err)
             else:
-                interpreter = Interpreter()
+                interpreter = Interpreter(symtable)
                 output = interpreter.eval(pg)
                 for out in output:
-                    print(out)
+                    if out is not None:
+                        print(out)
 
 
 def print_banner():
